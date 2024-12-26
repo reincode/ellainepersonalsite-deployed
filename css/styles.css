@@ -1,0 +1,324 @@
+/* Loading Screen Styling */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Above all other elements */
+}
+
+/* Spinner Animation */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ff69b4; /* Pink spinner color */
+  border-top: 6px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.5s linear infinite; /* Reduced to 0.5s for faster rotation */
+}
+
+/* Spinner Animation Keyframes */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  min-height: 200vh;
+  color: #ff69b4;
+}
+
+/* Background Sections */
+.bg-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../img/bg.png') no-repeat center top;
+  background-size: cover;
+  z-index: -2;
+}
+
+/* Background styling applied directly to the body */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/bg.png') no-repeat center top;
+  background-size: cover;
+  z-index: -2;
+}
+
+.background {
+  font-family: 'Montserrat';
+  display: flex;
+}
+
+/* Sidebar (left navigation panel) styling */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sidebar Logo */
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar img {
+  width: 150px;
+  height: auto;
+}
+
+/* Navigation styling */
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav li {
+  margin-bottom: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ff66b2;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+}
+
+.nav a.active {
+  color: #ff3399;
+}
+
+.nav a:hover {
+  color: #ff3399;
+}
+
+/* Main content area */
+.main {
+  margin-left: 250px;
+  padding: 40px;
+  width: calc(100% - 250px);
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  border-bottom: 2px solid #ffafcc;
+}
+
+.logo img {
+  width: 120px;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.illustration img {
+  width: 100%;
+  max-width: 600px;
+}
+
+.about-content {
+  max-width: 50%;
+}
+
+.about-content h2 {
+  color: #ff69b4;
+  font-size: 2rem;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Details Section */
+.details h1 {
+  text-align: center;
+  color: #ff69b4;
+  font-size: 3rem;
+}
+
+.details .subtitle {
+  text-align: center;
+  color: #ff69b4;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.details .info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.details .info h3 {
+  color: #ff69b4;
+}
+
+.details .info p {
+  line-height: 1.5;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For small screens (mobile devices) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    padding: 20px;
+  }
+
+  .header {
+    padding: 10px 5%;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .illustration img {
+    width: 80%;
+    max-width: none;
+  }
+
+  .details .info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+}
+
+/* Social Media Links */
+.social-links {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  gap: 10px; /* Space between icons */
+  margin-top: 20px; /* Space between the last paragraph and the social links */
+}
+
+.social-links a {
+  display: inline-block;
+}
+
+.social-links img {
+  width: 20px; /* Small icon size */
+  height: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* For extra small screens (smaller than mobile screens) */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main {
+    margin-left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav ul {
+    padding-left: 0;
+  }
+
+  .nav li {
+    margin-bottom: 10px;
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .illustration img {
+    width: 90%;
+  }
+
+  .details .info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-links {
+    gap: 8px; /* Less space on smaller screens */
+  }
+
+  .social-links img {
+    width: 18px; /* Slightly smaller icons on small screens */
+    height: 18px;
+  }
+}

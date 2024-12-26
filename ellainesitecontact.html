@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Ellaine</title>
+  <!-- Link to Google Fonts for Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+   <link rel="icon" href="img/ellainelogo.png" type="image/png">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-container input, .form-container textarea, .form-container button {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .form-container textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .form-container button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body class="background">
+
+  <!-- Sidebar navigation -->
+  <aside class="sidebar">
+    <div class="logo">
+      <a href="#">
+        <img src="img/ellainelogo.png" alt="Ellaine Logo">
+      </a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="ellainesite.html">about</a></li>
+        <li><a href="ellainesiteworks.html">my works</a></li>
+        <li><a href="ellainesitecontact.html" class="active">contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main content area -->
+  <main class="main">
+    <section class="form-container">
+      <h1>Send me a message ♥</h1>
+      <form action="mailto:ellainejac@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
